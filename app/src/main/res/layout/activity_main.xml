@@ -20,10 +20,28 @@
             android:text="User name:" />
 
         <Button
+            android:id="@+id/btn11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Beneficiary" />
+
+        <Button
             android:id="@+id/btn2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Salesian House" />
+
+        <Button
+            android:id="@+id/btn12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Colaborator" />
+
+        <Button
+            android:id="@+id/btn13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Photo" />
 
         <Button
             android:id="@+id/btn5"
@@ -42,5 +60,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Coworker sort" />
+
+        <Button
+            android:id="@+id/btn14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Work Type" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
