@@ -13,7 +13,10 @@ public class MainActivity extends AppCompatActivity {
     private Button btn5;
     private Button btn6;
     private Button btn7;
-
+    private Button btn11;
+    private Button btn12;
+    private Button btn13;
+    private Button btn14;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
         final Intent intentBt5 = new Intent(this, PlaceActivity.class);
         final Intent intentBt6 = new Intent(this, SwActivity.class);
         final Intent intentBt7 = new Intent(this, CoSortActivity.class);
-
+        final Intent intentBt11 = new Intent(this, DF_BeneficiarioActivity.class);
+        final Intent intentBt12 = new Intent(this, DF_ColaboradorActivity.class);
+        final Intent intentBt13 = new Intent(this, DF_FotoActivity.class);
+        final Intent intentBt14 = new Intent(this, DF_TipoObraActivity.class);
 
 
         super.onCreate(savedInstanceState);
@@ -61,6 +67,41 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentBt7);
             }
         });
+
+        btn11 = (Button) findViewById(R.id.btn11);
+        btn11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentBt11);
+            }
+        });
+
+        btn12 = (Button) findViewById(R.id.btn12);
+        btn12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentBt12);
+            }
+        });
+
+        btn13 = (Button) findViewById(R.id.btn13);
+        btn13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentBt13);
+            }
+        });
+
+        btn14 = (Button) findViewById(R.id.btn14);
+        btn14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentBt14);
+            }
+        });
+
+
+
 
 
 
