@@ -34,6 +34,9 @@
                 android:layout_height="wrap_content"
                 android:text="Type of work icon" />
 
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
             <RadioButton
                 android:id="@+id/radioButton"
                 android:layout_width="match_parent"
@@ -87,6 +90,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="RadioButton" />
+
+                <Button
+                    android:id="@+id/upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="UPLOAD" />
+
+            </RadioGroup>
 
         </LinearLayout>
     </ScrollView>

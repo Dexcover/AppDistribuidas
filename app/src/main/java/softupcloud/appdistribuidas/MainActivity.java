@@ -13,7 +13,10 @@ public class MainActivity extends AppCompatActivity {
     private Button btn5;
     private Button btn6;
     private Button btn7;
-
+    private Button btn4;
+    private Button btn3;
+    private Button btn11;
+    private Button btn12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
         final Intent intentBt5 = new Intent(this, PlaceActivity.class);
         final Intent intentBt6 = new Intent(this, SwActivity.class);
         final Intent intentBt7 = new Intent(this, CoSortActivity.class);
+        final Intent intentBt4 = new Intent(this, DF_BeneficiarioActivity.class);
+        final Intent intentBt3 = new Intent(this, DF_ColaboradorActivity.class);
+        final Intent intentBt11 = new Intent(this, DF_FotoActivity.class);
+        final Intent intentBt12 = new Intent(this, DF_TipoObraActivity.class);
 
 
 
@@ -62,7 +69,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn4 = (Button) findViewById(R.id.btn4);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentBt4);
+            }
+        });
 
+        btn3 = (Button) findViewById(R.id.btn3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentBt3);
+            }
+        });
 
+        btn11 = (Button) findViewById(R.id.btn11);
+        btn11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentBt11);
+            }
+        });
+
+        btn12 = (Button) findViewById(R.id.btn12);
+        btn12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intentBt12);
+            }
+        });
     }
 }

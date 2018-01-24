@@ -52,6 +52,30 @@
                     android:layout_height="wrap_content"
                     android:text="Salesian work" />
 
+                <Button
+                    android:id="@+id/btn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Beneficiary" />
+
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Collaborator" />
+
+                <Button
+                    android:id="@+id/btn11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Photo" />
+
+                <Button
+                    android:id="@+id/btn12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Salesian Work Type" />
+
             </LinearLayout>
         </ScrollView>
 
