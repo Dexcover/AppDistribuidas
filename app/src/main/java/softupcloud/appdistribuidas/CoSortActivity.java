@@ -23,7 +23,7 @@ public class CoSortActivity extends AppCompatActivity implements Variables{
     private String SOAP_ACTION="http://serviciosImplementados";
     private String METHOD_NAME="insertar";
     private String NAMESPACE="http://serviciosImplementados";
-    private String URL="http://"+IP_SERVER+":8086/WebService/services/servicioDescripcion.servicioDescripcionHttpSoap11Endpoint/";
+    private String URL="http://"+IP_SERVER+"/WebService/services/servicioDescripcion.servicioDescripcionHttpSoap11Endpoint/";
 
     SoapPrimitive cadenaResultado;
 

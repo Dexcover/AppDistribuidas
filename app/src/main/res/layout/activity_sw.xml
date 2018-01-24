@@ -24,7 +24,7 @@
                 android:text="ID house" />
 
             <Spinner
-                android:id="@+id/spinner3"
+                android:id="@+id/id_house"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -35,7 +35,7 @@
                 android:text="ID work sort" />
 
             <Spinner
-                android:id="@+id/spinner4"
+                android:id="@+id/id_work"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -72,7 +72,7 @@
                 android:text="work products" />
 
             <EditText
-                android:id="@+id/editText15"
+                android:id="@+id/editText10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -85,7 +85,7 @@
                 android:text="scheduling work" />
 
             <EditText
-                android:id="@+id/editText16"
+                android:id="@+id/editText11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -98,7 +98,7 @@
                 android:text="work information" />
 
             <EditText
-                android:id="@+id/editText17"
+                android:id="@+id/editText12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -111,7 +111,7 @@
                 android:text="work web site" />
 
             <EditText
-                android:id="@+id/editText18"
+                android:id="@+id/editText13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -124,14 +124,14 @@
                 android:text="work short name" />
 
             <EditText
-                android:id="@+id/editText19"
+                android:id="@+id/editText14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/id_cargar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="UPLOAD" />

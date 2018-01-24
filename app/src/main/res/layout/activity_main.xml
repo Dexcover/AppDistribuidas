@@ -10,14 +10,15 @@
         android:layout_width="368dp"
         android:layout_height="495dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
 
-        <ScrollView
+        <TextView
+            android:id="@+id/nameUser"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:text="User name:" />
 
-<<<<<<< HEAD
         <Button
             android:id="@+id/btn11"
             android:layout_width="match_parent"
@@ -47,47 +48,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Place" />
-=======
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/nameUser"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="User name:" />
->>>>>>> master
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salesian work" />
 
-                <Button
-                    android:id="@+id/btn7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Coworker sort" />
-
-                <Button
-                    android:id="@+id/btn2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Salesian House" />
-
-                <Button
-                    android:id="@+id/btn5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Place" />
-
-                <Button
-                    android:id="@+id/btn6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Salesian work" />
-
-            </LinearLayout>
-        </ScrollView>
-
-<<<<<<< HEAD
         <Button
             android:id="@+id/btn7"
             android:layout_width="match_parent"
@@ -99,7 +66,5 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Work Type" />
-=======
->>>>>>> master
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

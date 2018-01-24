@@ -100,7 +100,7 @@
                 android:inputType="phone" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/id_cargar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="UPLOAD" />

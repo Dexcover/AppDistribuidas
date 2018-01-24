@@ -23,13 +23,13 @@ import softupcloud.appdistribuidas.variables.Variables;
  *
  * This is about the second one of the list.
  *
- */servicioCasaHttpSoap11Endpoint
+ */
 
 public class ShActivity extends AppCompatActivity implements Variables {
     private String SOAP_ACTION="http://serviciosImplementados";
     private String METHOD_NAME="insertar";
     private String NAMESPACE="http://serviciosImplementados";
-    private String URL="http://"+IP_SERVER+":8086/WebService/services/servicioCasa./";
+    private String URL="http://"+IP_SERVER+"/WebService/services/servicioCasa.servicioCasaHttpSoap11Endpoint/";
 
     SoapPrimitive cadenaResultado;
 
@@ -37,8 +37,6 @@ public class ShActivity extends AppCompatActivity implements Variables {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sh);
-
-
 
         Button btUpload = (Button) findViewById(R.id.upload);
 
@@ -71,7 +69,6 @@ public class ShActivity extends AppCompatActivity implements Variables {
 
 
     private class AsynCallWs extends AsyncTask<Void, Void, Void> {
-
         private String nombreCasa;
         private String addCasa;
         private String telfCasa;
@@ -98,7 +95,7 @@ public class ShActivity extends AppCompatActivity implements Variables {
             return null;
         }
 
-        //este no se cambia va tal cual, solo activity
+
         protected void onPostExecute(Void resultado){
             AlertDialog.Builder mensajeDialogo = new AlertDialog.Builder(ShActivity.this);
             mensajeDialogo.setTitle("server status response.");
@@ -127,8 +124,6 @@ public class ShActivity extends AppCompatActivity implements Variables {
             Request.addProperty("rep",dirCasa);
             Request.addProperty("shortname",ncortoCasa);
 
-
-            //esto va igual no se modifica
             SoapSerializationEnvelope soapEnvelop= new SoapSerializationEnvelope(SoapEnvelope.VER11);
             soapEnvelop.dotNet=true;
             soapEnvelop.setOutputSoapObject(Request);
