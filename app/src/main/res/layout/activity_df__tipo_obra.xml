@@ -92,6 +92,15 @@
                 android:text="RadioButton" />
             </RadioGroup>
 
+                <Button
+                    android:id="@+id/upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="UPLOAD" />
+
+            </RadioGroup>
+
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
