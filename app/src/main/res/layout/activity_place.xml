@@ -19,7 +19,7 @@
                 android:text="ID house" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/id_house"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -30,7 +30,7 @@
                 android:text="ID work" />
 
             <Spinner
-                android:id="@+id/spinner2"
+                android:id="@+id/id_work"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
