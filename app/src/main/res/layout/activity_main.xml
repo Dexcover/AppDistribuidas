@@ -10,6 +10,7 @@
         android:layout_width="368dp"
         android:layout_height="495dp"
         android:orientation="vertical"
+
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
@@ -79,5 +80,58 @@
             </LinearLayout>
         </ScrollView>
 
+        <TextView
+            android:id="@+id/nameUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="User name:" />
+
+        <Button
+            android:id="@+id/btn11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Beneficiary" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salesian House" />
+
+        <Button
+            android:id="@+id/btn12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Colaborator" />
+
+        <Button
+            android:id="@+id/btn13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Photo" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Place" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salesian work" />
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coworker sort" />
+
+        <Button
+            android:id="@+id/btn14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Work Type" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
