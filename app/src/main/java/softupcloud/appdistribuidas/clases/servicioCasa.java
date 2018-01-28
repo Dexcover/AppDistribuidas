@@ -15,7 +15,7 @@ import org.ksoap2.serialization.MarshalFloat;
 public class servicioCasa {
     
     public String NAMESPACE ="http://serviciosImplementados";
-    public String url="http://192.168.43.31:8086/WebService/services/servicioCasa.servicioCasaHttpSoap11Endpoint/";
+    public String url="http://192.168.100.80:8087/WebService/services/servicioCasa.servicioCasaHttpSoap11Endpoint/";
     public int timeOut = 180;
     public IWsdl2CodeEvents eventHandler;
     public WS_Enums.SoapProtocolVersion soapVersion;

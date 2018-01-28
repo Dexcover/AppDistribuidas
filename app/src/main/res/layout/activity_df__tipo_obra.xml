@@ -35,61 +35,167 @@
                 android:text="Type of work icon" />
 
             <RadioGroup
-                android:layout_width="wrap_content"
+                android:id="@+id/radioGrupo"
+                android:layout_width="53dp"
                 android:layout_height="wrap_content">
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
 
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="1" />
 
-            <RadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="41dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/toautogestionada" />
 
-            <RadioButton
-                android:id="@+id/radioButton4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_weight="1" />
 
-            <RadioButton
-                android:id="@+id/radioButton5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2" />
 
-            <RadioButton
-                android:id="@+id/radioButton6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="41dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/toeducativa" />
 
-            <RadioButton
-                android:id="@+id/radioButton7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_weight="1" />
 
-            <RadioButton
-                android:id="@+id/radioButton8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3" />
 
-            <RadioButton
-                android:id="@+id/radioButton9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="RadioButton" />
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="40dp"
+                    android:layout_height="37dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/tomediocomunicacion" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="4" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/topastoral" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="5" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="40dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/tosalud" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/radioButton6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="41dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/tosocial" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="7" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="35dp"
+                    android:layout_height="34dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/tomundial" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/radioButton8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="8" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="37dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/todiscapacidad" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_weight="1" />
+
+                <RadioButton
+                    android:id="@+id/radioButton9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="9" />
+
+                <ImageView
+                    android:id="@+id/imageView11"
+                    android:layout_width="38dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/totecnologica" />
             </RadioGroup>
 
                 <Button
@@ -99,7 +205,7 @@
                     android:layout_weight="1"
                     android:text="UPLOAD" />
 
-            </RadioGroup>
+
 
         </LinearLayout>
     </ScrollView>

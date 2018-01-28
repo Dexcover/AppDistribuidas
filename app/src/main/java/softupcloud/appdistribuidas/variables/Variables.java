@@ -6,5 +6,5 @@ package softupcloud.appdistribuidas.variables;
 
 public interface Variables {
     public String SOAP_ACTION="http://serviciosImplementados";
-    public String IP_SERVER="192.168.43.124:8080";
+    public String IP_SERVER="192.168.100.80:8087";
 }
