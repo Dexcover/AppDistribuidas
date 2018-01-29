@@ -22,7 +22,7 @@
                 android:text="ID house" />
 
             <Spinner
-                android:id="@+id/spinner6"
+                android:id="@+id/id_house"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -33,7 +33,7 @@
                 android:text="ID work" />
 
             <Spinner
-                android:id="@+id/spinner7"
+                android:id="@+id/id_work"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -75,7 +75,7 @@
                 android:inputType="textPersonName" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/id_cargar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="UPLOAD" />
