@@ -33,12 +33,19 @@ public class DF_ColaboradorActivity extends AppCompatActivity implements Variabl
     SoapPrimitive cadenaResultado;
     SoapObject objeto; //Objeto para combo Casa
     SoapObject objeto2; //Objeto para combo Obra
+    SoapObject objeto3; //objeto
+    SoapObject objeto4; //objeto combo lugar
+
     Spinner house;
     Spinner obra;
+    Spinner colaborador;
+    Spinner lugar;
     Button id_cargar;
 
     List<String> values; //Values Casa
     List<String> values_obra; //Values Obra
+    List<String> values_colaboradores; //Values colab
+    List<String> values_lugar; //Values lugar
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +56,11 @@ public class DF_ColaboradorActivity extends AppCompatActivity implements Variabl
 
         obra= (Spinner) findViewById(R.id.id_work);
         house= (Spinner) findViewById(R.id.id_house);
+        colaborador = (Spinner) findViewById(R.id.spinner11);
+        lugar = (Spinner) findViewById(R.id.spinner10);
+
+        AsynCallWs_colaborador co= new AsynCallWs_colaborador();
+        co.execute();
 
         house.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -57,6 +69,28 @@ public class DF_ColaboradorActivity extends AppCompatActivity implements Variabl
                 Toast.makeText(DF_ColaboradorActivity.this, casa, Toast.LENGTH_LONG).show();
                 AsynCallWs_obra obra= new AsynCallWs_obra(casa);
                 obra.execute();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                //AsynCallWs tarea= new AsynCallWs();
+                //tarea.execute();
+            }
+        });
+
+
+        obra.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            System.out.println("entró");
+            String obra1= obra.getSelectedItem().toString();
+
+            if(obra1.equals("")){
+                obra1 = "";
+            }
+            Toast.makeText(DF_ColaboradorActivity.this, obra1, Toast.LENGTH_LONG).show();
+            AsynCallWs_lugar crear= new AsynCallWs_lugar(obra1);
+            crear.execute();
             }
 
             @Override
@@ -74,20 +108,23 @@ public class DF_ColaboradorActivity extends AppCompatActivity implements Variabl
                 String casa= house.getSelectedItem().toString();
                 String nobra= obra.getSelectedItem().toString();
                 // String de "spinner8", o lugar; seteado <---------------------------------------------------------- AQUÍ PARÁMETRO DE SPINNER LUGAR
-                String lugar = "1";
+                String lugar1 = lugar.getSelectedItem().toString();
                 EditText dato1= (EditText) findViewById(R.id.editText22);
+                String colaborator = colaborador.getSelectedItem().toString();
 
                 // String de spinner de colaborador; seteado <---------------------------------------------------------- AQUÍ PARÁMETRO DE SPINNER LUGAR
-                String tipocolab = "2";
+
                 //EditText dato2= (EditText) findViewById(R.id.editText21);
 
                 String numcolab=dato1.getText().toString();
 
 
-                AsynCallWs_enviar tarea= new AsynCallWs_enviar(casa, nobra, lugar, numcolab, tipocolab);
+                AsynCallWs_enviar tarea= new AsynCallWs_enviar(casa, nobra, lugar1, numcolab, colaborator);
                 tarea.execute();
             }
         });
+
+
     }
 
     private class AsynCallWs extends AsyncTask<Void, Void, Void> {
@@ -110,6 +147,58 @@ public class DF_ColaboradorActivity extends AppCompatActivity implements Variabl
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             house = (Spinner) findViewById(R.id.id_house);
             house.setAdapter(dataAdapter);
+
+        }
+
+    }
+
+    private class AsynCallWs_lugar extends AsyncTask<Void, Void, Void> {
+        String nobra;
+        AsynCallWs_lugar(String nobra){
+            this.nobra=nobra;
+
+        }
+        protected void onPreExecute(){
+            System.out.println("Pre execute obra -- ");
+        }
+
+        @Override
+        protected Void doInBackground(Void... hola) {
+            cargarCombo_lugar(nobra);
+            return null;
+        }
+
+
+        protected void onPostExecute(Void resultado){
+
+            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(DF_ColaboradorActivity.this, android.R.layout.simple_spinner_item, values_lugar);
+            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            lugar = (Spinner) findViewById(R.id.spinner10);
+            lugar.setAdapter(dataAdapter);
+
+        }
+
+    }
+
+    private class AsynCallWs_colaborador extends AsyncTask<Void, Void, Void> {
+
+        protected void onPreExecute(){
+            System.out.println("Pre execute obra -- ");
+        }
+
+        @Override
+        protected Void doInBackground(Void... hola) {
+            cargarCombo_colaborador();
+            return null;
+        }
+
+
+        protected void onPostExecute(Void resultado){
+
+            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(DF_ColaboradorActivity.this, android.R.layout.simple_spinner_item, values_colaboradores);
+            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            colaborador = (Spinner) findViewById(R.id.spinner11);
+            colaborador.setAdapter(dataAdapter);
 
         }
 
@@ -140,6 +229,56 @@ public class DF_ColaboradorActivity extends AppCompatActivity implements Variabl
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             obra = (Spinner) findViewById(R.id.id_work);
             obra.setAdapter(dataAdapter);
+
+        }
+
+    }
+
+    public void cargarCombo_lugar(String nombreObra){
+
+        try{
+
+            String URL2="http://"+IP_SERVER+"/WebService/services/servicioLugar.servicioLugarHttpSoap11Endpoint/";
+            METHOD_NAME="devolverLugarPorObra";
+            SoapObject Request = new SoapObject(NAMESPACE,METHOD_NAME);
+            Request.addProperty("nombreObra",nombreObra);
+            SoapSerializationEnvelope soapEnvelop= new SoapSerializationEnvelope(SoapEnvelope.VER11);
+            soapEnvelop.dotNet=true;
+            soapEnvelop.setOutputSoapObject(Request);
+            HttpTransportSE trasporte = new HttpTransportSE(URL2);
+            trasporte.call(SOAP_ACTION,soapEnvelop);
+            objeto4 = (SoapObject) soapEnvelop.bodyIn;
+            values_lugar = new ArrayList<String>();
+            for (int i = 0; i < objeto4.getPropertyCount(); i++) {
+                values_lugar.add(objeto4.getProperty(i).toString());
+            }
+        }catch(Exception e){
+
+            Log.i("","EXCEPTION: -------------- ******************* "+ e.getMessage());
+
+        }
+
+    }
+
+    public void cargarCombo_colaborador(){
+
+        try{
+            METHOD_NAME="devolverTipoColab";
+
+            SoapObject Request = new SoapObject(NAMESPACE,METHOD_NAME);
+            SoapSerializationEnvelope soapEnvelop= new SoapSerializationEnvelope(SoapEnvelope.VER11);
+            soapEnvelop.dotNet=true;
+            soapEnvelop.setOutputSoapObject(Request);
+            HttpTransportSE trasporte = new HttpTransportSE(URL);
+            trasporte.call(SOAP_ACTION,soapEnvelop);
+            objeto3 = (SoapObject) soapEnvelop.bodyIn;
+            values_colaboradores = new ArrayList<String>();
+            for (int i = 0; i < objeto3.getPropertyCount(); i++) {
+                values_colaboradores.add(objeto3.getProperty(i).toString());
+            }
+        }catch(Exception e){
+
+            Log.i("","EXCEPTION: -------------- ******************* "+ e.getMessage());
 
         }
 

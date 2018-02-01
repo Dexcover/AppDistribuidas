@@ -33,12 +33,17 @@ public class DF_BeneficiarioActivity extends AppCompatActivity implements Variab
     SoapPrimitive cadenaResultado;
     SoapObject objeto; //Objeto para combo Casa
     SoapObject objeto2; //Objeto para combo Obra
+    SoapObject objeto4; //objeto combo lugar
+
     Spinner house;
     Spinner obra;
+    Spinner lugar;
+
     Button id_cargar;
 
     List<String> values; //Values Casa
     List<String> values_obra; //Values Obra
+    List<String> values_lugar; //Values lugar
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,7 @@ public class DF_BeneficiarioActivity extends AppCompatActivity implements Variab
 
         obra= (Spinner) findViewById(R.id.id_work);
         house= (Spinner) findViewById(R.id.id_house);
+        lugar = (Spinner) findViewById(R.id.spinner8);
 
         house.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -61,8 +67,8 @@ public class DF_BeneficiarioActivity extends AppCompatActivity implements Variab
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                AsynCallWs tarea= new AsynCallWs();
-                tarea.execute();
+                //AsynCallWs tarea= new AsynCallWs();
+                //tarea.execute();
             }
         });
 
@@ -93,6 +99,8 @@ public class DF_BeneficiarioActivity extends AppCompatActivity implements Variab
 
         protected void onPreExecute(){
             System.out.println("Pre execute -- ");
+
+
         }
 
         @Override
@@ -103,11 +111,39 @@ public class DF_BeneficiarioActivity extends AppCompatActivity implements Variab
 
 
         protected void onPostExecute(Void resultado){
-
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(DF_BeneficiarioActivity.this, android.R.layout.simple_spinner_item, values);
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             house = (Spinner) findViewById(R.id.id_house);
             house.setAdapter(dataAdapter);
+
+
+        }
+
+    }
+
+    private class AsynCallWs_lugar extends AsyncTask<Void, Void, Void> {
+        String nobra;
+        AsynCallWs_lugar(String nobra){
+            this.nobra=nobra;
+
+        }
+        protected void onPreExecute(){
+            System.out.println("Pre execute obra -- ");
+        }
+
+        @Override
+        protected Void doInBackground(Void... hola) {
+            cargarCombo_lugar(nobra);
+            return null;
+        }
+
+
+        protected void onPostExecute(Void resultado){
+
+            ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(DF_BeneficiarioActivity.this, android.R.layout.simple_spinner_item, values_lugar);
+            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            lugar = (Spinner) findViewById(R.id.spinner10);
+            lugar.setAdapter(dataAdapter);
 
         }
 
@@ -138,6 +174,32 @@ public class DF_BeneficiarioActivity extends AppCompatActivity implements Variab
             dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             obra = (Spinner) findViewById(R.id.id_work);
             obra.setAdapter(dataAdapter);
+
+        }
+
+    }
+
+    public void cargarCombo_lugar(String nombreObra){
+
+        try{
+
+            String URL2="http://"+IP_SERVER+"/WebService/services/servicioLugar.servicioLugarHttpSoap11Endpoint/";
+            METHOD_NAME="devolverLugarPorObra";
+            SoapObject Request = new SoapObject(NAMESPACE,METHOD_NAME);
+            Request.addProperty("nombreObra",nombreObra);
+            SoapSerializationEnvelope soapEnvelop= new SoapSerializationEnvelope(SoapEnvelope.VER11);
+            soapEnvelop.dotNet=true;
+            soapEnvelop.setOutputSoapObject(Request);
+            HttpTransportSE trasporte = new HttpTransportSE(URL2);
+            trasporte.call(SOAP_ACTION,soapEnvelop);
+            objeto4 = (SoapObject) soapEnvelop.bodyIn;
+            values_lugar = new ArrayList<String>();
+            for (int i = 0; i < objeto4.getPropertyCount(); i++) {
+                values_lugar.add(objeto4.getProperty(i).toString());
+            }
+        }catch(Exception e){
+
+            Log.i("","EXCEPTION: -------------- ******************* "+ e.getMessage());
 
         }
 

@@ -1,0 +1,33 @@
+<resources>
+
+    <string-array name="valores">
+        <item>Docente</item>
+        <item>Administrativo</item>
+        <item>Médico</item>
+        <item>Salesiano</item>
+        <item>Catequiste</item>
+        <item>Animador de asamblea</item>
+        <item>Ministro Laico</item>
+        <item>Animador de grupo</item>
+        <item>Voluntario</item>
+        <item>Guía Taller</item>
+        <item>Personal Servicio</item>
+        <item>Maestro especial</item>
+        <item>Producción</item>
+        <item>Bachiller Técnico</item>
+        <item>Apoyo</item>
+        <item>Salesiano</item>
+        <item>Sacerdote</item>
+        <item>Músico</item>
+        <item>Cursillista de cristianidad</item>
+        <item>Docentes y Administrativos</item>
+        <item>PRUEBACOLABORADOR1</item>
+        <item>pruebaprueba1</item>
+        <item>preuba11</item>
+        <item>preuba11</item>
+        <item>prueba20</item>
+        <item>DIego</item>
+        <item>diego</item>
+    </string-array>
+
+</resources>
